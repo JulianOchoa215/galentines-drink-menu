@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galentine’s Day Drinks</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #a0522d;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #d63384;
+            margin: 20px 0;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .drink {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .drink:hover {
+            transform: scale(1.05);
+        }
+        .drink img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .filter-buttons {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 20px;
+        }
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #a02260;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .drink {
+                width: 100%;
+                max-width: 90%;
+            }
+            button {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Galentine’s Day Drink Menu</h1>
+    <div class="filter-buttons">
+        <button onclick="filterDrinks('all')">All</button>
+        <button onclick="filterDrinks('sweet')">Sweet & Flirty</button>
+        <button onclick="filterDrinks('bold')">Bold & Boozy</button>
+    </div>
+    <div class="menu">
+        <div class="drink bold">
+            <img src="https://images.unsplash.com/photo-1604908177521-3f6f04fa1b30" alt="Whiskey Sour">
+            <h3>Classic Whiskey Sour</h3>
+            <p>Jameson, lemon juice, and simple syrup—smooth and balanced.</p>
+        </div>
+        <div class="drink bold">
+            <img src="https://images.unsplash.com/photo-1604908553924-0f3f3f3f3f3f" alt="Green Apple Margarita">
+            <h3>Green Apple Margarita</h3>
+            <p>Tequila, Sour Apple Schnapps, Triple Sec, and lime juice for a tangy twist.</p>
+        </div>
+        <div class="drink sweet">
+            <img src="https://images.unsplash.com/photo-1604908724567-0f3f3f3f3f3f" alt="Blue Lagoon Martini">
+            <h3>Blue Lagoon Martini</h3>
+            <p>Vodka, Blue Curaçao, and pineapple juice for a vibrant cocktail.</p>
+        </div>
+        <div class="drink sweet">
+            <img src="https://images.unsplash.com/photo-1604908891234-0f3f3f3f3f3f" alt="Watermelon Margarita">
+            <h3>Watermelon Margarita</h3>
+            <p>Tequila, Watermelon Schnapps, and lime juice—refreshingly fruity!</p>
+        </div>
+        <div class="drink sweet">
+            <img src="https://images.unsplash.com/photo-1604909056789-0f3f3f3f3f3f" alt="Peachy Keen Cocktail">
+            <h3>Peachy Keen Cocktail</h3>
+            <p>Peach schnapps, vodka, and citrus flavors for a smooth drink.</p>
+        </div>
+        <div class="drink sweet">
+            <img src="https://images.unsplash.com/photo-1604909223456-0f3f3f3f3f3f" alt="Coconut Pineapple Daiquiri">
+            <h3>Coconut Pineapple Daiquiri</h3>
+            <p>Malibu Rum, pineapple juice, lime, and simple syrup for a tropical delight.</p>
+        </div>
+        <div class="drink sweet">
+            <img src="https://images.unsplash.com/photo-1604909554567-0f3f3f3f3f3f" alt="Malibu Sunset">
+            <h3>Malibu Sunset</h3>
+            <p>Malibu Rum, pineapple juice, and grenadine for a stunning sunset effect.</p>
+        </div>
+    </div>
+    <script>
+        function filterDrinks(category) {
+            let drinks = document.querySelectorAll('.drink');
+            drinks.forEach(drink => {
+                if (category === 'all' || drink.classList.contains(category)) {
+                    drink.style.display = 'block';
+                } else {
+                    drink.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
